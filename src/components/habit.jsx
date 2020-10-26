@@ -1,21 +1,16 @@
 import React, { Component } from "react";
 
 class Habit extends Component {
-  state = {
-    count: 0,
-  };
-
   handleIncrement = () => {
-    // state 오브젝트 안에 있는 count 를 증가한뒤 state를 업데이트 해야한다.
-    // this.state.count++; 또는 this.state.count += 1 은 불가능하다.
-    // react는 업데이트 되었는지 알지 못한다. 그래서 전체적인 데이터를 새로 만들어서 업데이트 해주어야한다.
-    this.setState({ count: this.state.count + 1 });
+    this.props.onIncrement(this.props.habit);
   };
 
   handleDecrement = () => {
-    const count = this.state.count - 1;
-    // count가 0보다 작으면 ? 0을 출력하고 아니면 : count를 출력해라.
-    this.setState({ count: count < 0 ? 0 : count });
+    this.props.onDecrement(this.props.habit);
+  };
+
+  handleDelete = () => {
+    this.props.onDelete(this.props.habit);
   };
 
   render() {
@@ -37,7 +32,11 @@ class Habit extends Component {
         >
           <i className="fas fa-minus-square"></i>
         </button>
-        <button className="habit-button habit-delete">
+        <button
+          className="habit-button habit-delete"
+          onClick={this.handleDelete} //클래스안에 멤버변수를 설정해놓고 사용하는게 더 좋다.
+          //onClick = {()=> { this.props.onDelete(this.props.habit )}}  //이렇게쓰면 render될때마다 불필요하게 함수가 계속 생성된다. //문제가되는 경우도있다.
+        >
           <i className="fas fa-trash"></i>
         </button>
       </li>
