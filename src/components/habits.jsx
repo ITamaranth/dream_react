@@ -36,6 +36,9 @@ class Habits extends Component {
             /> // habit 이라는 props이름에 habit 데이터를 전달한다.
           ))}
         </ul>
+        <button className="habits-reset" onClick={this.props.onReset}>
+          Reset All
+        </button>
       </>
     );
   }
