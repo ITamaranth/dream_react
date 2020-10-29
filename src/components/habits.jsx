@@ -2,40 +2,23 @@ import React, { Component } from "react";
 import Habit from "./habit";
 
 class Habits extends Component {
-  state = {
-    habits: [
-      { id: 1, name: "Reading", count: 0 },
-      { id: 2, name: "Running", count: 0 },
-      { id: 3, name: "Coding", count: 0 },
-    ],
-  };
-
   //리액트는 부분수정을 알아차리지 못해서, 전체적으로 복사해서 설정해주어야한다.
   handleIncrement = (habit) => {
-    const habits = [...this.state.habits]; // 새로운 habits 변수는 [...this.state.habits]로, state변수의 habits를 그대로 복사해서 가져온다.
-    const index = habits.indexOf(habit); // 해당인덱스를 가져온다.
-    habits[index].count++; // 인덱스로 접근해서 증가시킨다.
-    // this.setState({ habits: habits });  // habits:habits는 동일해서 habits 라고 한번만 적어도된다.
-    this.setState({ habits });
+    this.props.onIncrement(habit);
   };
 
   handleDecrement = (habit) => {
-    const habits = [...this.state.habits]; // 새로운 habits 변수는 [...this.state.habits]로, state변수의 habits를 그대로 복사해서 가져온다.
-    const index = habits.indexOf(habit); // 해당인덱스를 가져온다.
-    const count = habits[index].count - 1; // 인덱스로 접근해서 증가시킨다.
-    habits[index].count = count < 0 ? 0 : count; // 음수면 0으로 나타내기
-    this.setState({ habits });
+    this.props.onDecrement(habit);
   };
 
   handleDelete = (habit) => {
-    const habits = this.state.habits.filter((item) => item.id !== habit.id); // habit 이름 같아서 item이라고했음, 기존에 state에 있는 모든 habits를 돌면서 전달된 habit의 id가 아닌것들만 모아서 복사해서 const habits에 할당
-    this.setState({ habits });
+    this.props.onDelete(habit);
   };
 
   render() {
     return (
       <ul>
-        {this.state.habits.map((habit) => (
+        {this.props.habits.map((habit) => (
           <Habit
             key={habit.id}
             habit={habit}
