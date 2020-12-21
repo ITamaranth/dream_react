@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Habit from "./habit";
-import HabitAddForm from "./habitAddForm";
+import React, { Component } from 'react';
+import Habit from './habit';
+import HabitAddForm from './habitAddForm';
 
 class Habits extends Component {
   //리액트는 부분수정을 알아차리지 못해서, 전체적으로 복사해서 설정해주어야한다.
@@ -33,7 +33,7 @@ class Habits extends Component {
               onDecrement={this.handleDecrement}
               onDelete={this.handleDelete}
               onAdd={this.handleAdd}
-            /> // habit 이라는 props이름에 habit 데이터를 전달한다.
+            />
           ))}
         </ul>
         <button className="habits-reset" onClick={this.props.onReset}>
