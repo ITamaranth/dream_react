@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/dream_react/static/css/main.d35e73af.chunk.css",
+    "main.js": "/dream_react/static/js/main.b12dcf0b.chunk.js",
+    "main.js.map": "/dream_react/static/js/main.b12dcf0b.chunk.js.map",
+    "runtime-main.js": "/dream_react/static/js/runtime-main.1cd294b0.js",
+    "runtime-main.js.map": "/dream_react/static/js/runtime-main.1cd294b0.js.map",
+    "static/js/2.2d005c0e.chunk.js": "/dream_react/static/js/2.2d005c0e.chunk.js",
+    "static/js/2.2d005c0e.chunk.js.map": "/dream_react/static/js/2.2d005c0e.chunk.js.map",
+    "index.html": "/dream_react/index.html",
+    "precache-manifest.564c96ecddd1d3912649753a5ec0c897.js": "/dream_react/precache-manifest.564c96ecddd1d3912649753a5ec0c897.js",
+    "service-worker.js": "/dream_react/service-worker.js",
+    "static/css/main.d35e73af.chunk.css.map": "/dream_react/static/css/main.d35e73af.chunk.css.map",
+    "static/js/2.2d005c0e.chunk.js.LICENSE.txt": "/dream_react/static/js/2.2d005c0e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1cd294b0.js",
+    "static/js/2.2d005c0e.chunk.js",
+    "static/css/main.d35e73af.chunk.css",
+    "static/js/main.b12dcf0b.chunk.js"
+  ]
+}
